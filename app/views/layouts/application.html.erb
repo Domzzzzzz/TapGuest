@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TapGuest</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'TGlogo3' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <header class="main-header">
+      <% unless @disable_nav %>
+        <%= render 'layouts/navbar' %>
+      <% end %>
+    </header>
+
+    <div class="content-wrapper">
+
+      <div class="alert-msgs">
+        <% flash.each do |type, content| %>
+          <% if content.respond_to?('each')
+              content.each do |item| %>
+                <%= render 'layouts/alert', type: type, content: item %>
+              <% end %>
+          <% else %>
+              <%= render 'layouts/alert', type: type, content: content %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <%= yield %>
+
+    </div>
+  </div>
+
+</body>
+</html>
