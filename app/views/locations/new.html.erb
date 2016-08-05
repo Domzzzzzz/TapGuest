@@ -1,0 +1,63 @@
+<div class="center-block text-center">
+  <%= image_tag('TGlogo2') %>
+</div> <br>
+
+<div class="form-wrapper">
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">Restaurant Information</h3>
+    </div>
+
+    <%= form_for(@location, url: location_path, role: 'form') do |f| %>
+
+    <% if @location.errors.any? %>
+          <div id="devise-errors">
+            <h2><%= pluralize(@location.errors.count, "error") %> prohibited your restaurant info from being added:</h2>
+            <ul>
+              <% @location.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+    <% end %>
+
+      <div class="box-body">
+        <div class="form-group">
+          <%= f.text_field :restaurant_name, placeholder: 'Restaurant Name', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :address, placeholder: 'Address', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :city, placeholder: 'City', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :state, placeholder: 'State', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :postal_code, placeholder: 'Postal Code', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :main_phone, placeholder: 'Main Phone Number', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :website, placeholder: 'Restaurant Website', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.text_field :position, placeholder: 'Your Position', class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="box-footer">
+        <%= f.submit "Submit", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

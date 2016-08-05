@@ -18,7 +18,7 @@
   <nav id="sidebar">
     <ul id="sidebar-list" style="list-style:none;">
       <li id="name-panel">
-        <i class="fa fa-user fa-2x"></i> <font size="5"><%= current_admin.firstname %></font>
+        <i class="fa fa-user fa-2x"></i> <font size="5"><%= current_admin.username %></font>
       </li>
 
       <li class="sidebar-items">
@@ -27,12 +27,6 @@
 
       <li class="sidebar-items">
         <i class="fa fa-dashboard"></i> Dashboard
-      </li>
-
-      <li class="sidebar-items">
-        <%= link_to  edit_location_path, class: 'sidebar-links'  do %>
-          <i class="fa fa-cutlery"></i> Update Restaurant Info
-        <% end %>
       </li>
 
       <li class="sidebar-items">

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   # Adding more flash types for bootstrap styling (defaults- :alert, :notice)
   add_flash_types :danger, :warning, :success, :validation_errors
 
-  # Exclude page from displaying navbar
+  # Exclude page from displaying navbar - use: before_filter :disable_nav
   def disable_nav
     @disable_nav = true
   end
