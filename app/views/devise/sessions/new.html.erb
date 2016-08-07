@@ -5,7 +5,7 @@
 <div class="form-wrapper">
   <div class="box box-primary">
     <div class="box-header with-border">
-      <h3 class="box-title">Log In</h3>
+      <h3 class="text-center">Log In</h3> <hr>
     </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), role: 'form') do |f| %>
@@ -33,11 +33,12 @@
       </div>
 
       <div class="box-footer">
-        <%= f.submit "Log in", class: 'btn btn-primary' %>
+        <%= f.submit "Log in", class: 'btn btn-primary bottom-btn' %> <br>
+        <%= link_to 'Sign up for a new account', new_admin_registration_path %>
       </div>
     <% end %>
   </div>
-  <div class="text-center">
-    <%= link_to "Back", root_path %>
-  </div>
+</div>
+<div class="text-center">
+  <%= link_to 'Back', root_path %>
 </div>

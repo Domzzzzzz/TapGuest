@@ -4,7 +4,9 @@
   <div id="home-links">
     <p id="home-caption">Make Restaurant Waiting Easy! Our mission is simple - to provide THE preferred iPad® waitlist solution for leading Restaurants in the US and Canada, and to grow and evolve our business as your business needs do. If you want a true business partner who also happens to make best in class software with no shenanigans, then you have come to the right place. TapGuest combines cloud technology with the flexibility and power of the iPad®, SMS Text messaging and mobile phones. Simply put, TapGuest is Waiting Made Easy!™. What are you waiting for? Let your guests Wait Different™ now...sign up for TapGuest service today!
     </p> <br>
-    <%= link_to 'Log in', new_admin_session_path, class: 'btn btn-primary' %>
-    <%= link_to 'Sign up', new_admin_registration_path, class: 'btn btn-primary' %>
+    <% unless admin_signed_in? %>
+      <%= link_to 'Log In', new_admin_session_path, class: 'btn btn-primary' %>
+      <%= link_to 'Sign Up', new_admin_registration_path, class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>

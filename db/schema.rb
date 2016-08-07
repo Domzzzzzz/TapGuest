@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805110504) do
+ActiveRecord::Schema.define(version: 20160807084154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,10 +37,12 @@ ActiveRecord::Schema.define(version: 20160805110504) do
     t.datetime "confirmation_sent_at"
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+    t.integer  "location_id"
   end
 
   add_index "admins", ["confirmation_token"], name: "index_admins_on_confirmation_token", unique: true, using: :btree
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["location_id"], name: "index_admins_on_location_id", using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "locations", force: :cascade do |t|
@@ -67,5 +69,6 @@ ActiveRecord::Schema.define(version: 20160805110504) do
 
   add_index "verifications", ["admin_id"], name: "index_verifications_on_admin_id", using: :btree
 
+  add_foreign_key "admins", "locations"
   add_foreign_key "verifications", "admins"
 end

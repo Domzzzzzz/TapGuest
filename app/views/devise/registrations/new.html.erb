@@ -5,10 +5,10 @@
 <div class="form-wrapper">
   <div class="box box-primary">
     <div class="box-header with-border">
-      <h3 class="box-title">Sign Up</h3>
+      <h3 class="text-center">Sign Up</h3> <hr>
     </div>
 
-    <%= nested_form_for(resource, as: resource_name, url: registration_path(resource_name), role: 'form') do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), role: 'form') do |f| %>
 
     <% if resource.errors.any? %>
       <div class="devise-errors" role="alert">
@@ -43,7 +43,8 @@
       </div>
 
       <div class="box-footer">
-        <%= f.submit "Sign Up", class: 'btn btn-primary' %>
+        <%= f.submit "Sign Up", class: 'btn btn-primary bottom-btn' %> <br>
+        <%= link_to 'I already have an account', new_admin_session_path %>
       </div>
     <% end %>
   </div>

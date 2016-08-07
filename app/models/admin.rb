@@ -1,6 +1,6 @@
 class Admin < ActiveRecord::Base
   belongs_to :location
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
@@ -8,5 +8,12 @@ class Admin < ActiveRecord::Base
 
   validates :firstname, :lastname, :username, presence: true
 
+  protected
+
+  # skip email confirmation only during development
+  # erase the method below when ready to deploy to production
+  def confirmation_required?
+    false
+  end
 
 end

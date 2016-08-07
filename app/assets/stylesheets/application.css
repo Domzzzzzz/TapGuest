@@ -33,7 +33,7 @@
 /* Form styles for signup, log in, & acct settings */
 .form-wrapper {
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   margin: 0 auto;
 }
 
@@ -47,6 +47,10 @@
 
 .hidden {
   display: none;
+}
+
+.bottom-btn {
+  margin-bottom: 8px;
 }
 
 /* Custom color & styles for devise error msgs */
