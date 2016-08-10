@@ -22,7 +22,7 @@
       </li>
 
       <li class="sidebar-items">
-        <i class="fa fa-key"></i> User Role
+        <i class="fa fa-key"></i> Admin
       </li>
 
       <li class="sidebar-items">
@@ -32,6 +32,12 @@
       <li class="sidebar-items">
         <%= link_to  edit_admin_registration_path, class: 'sidebar-links'  do %>
           <i class="fa fa-cog"></i> Account Settings
+        <% end %>
+      </li>
+
+      <li class="sidebar-items">
+        <%= link_to edit_location_path(@location), class: 'sidebar-links' do %>
+          <i class="fa fa-cutlery"></i> Restaurant Info
         <% end %>
       </li>
 

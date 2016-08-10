@@ -15,6 +15,7 @@ gem 'adminlte-rails'
 gem 'twilio-ruby'
 gem 'figaro'
 gem 'phonelib'
+gem 'validate_url'
 
 group :development, :test do
   gem 'byebug'

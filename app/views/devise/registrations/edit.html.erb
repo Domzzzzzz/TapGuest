@@ -2,7 +2,7 @@
   <%= image_tag('TGlogo2') %>
 </div> <br>
 
-<div class="form-wrapper">
+<div class="edit-form">
   <div class="box box-primary">
     <div class="box-header with-border">
       <h3 class="text-center">Account Settings</h3> <hr>
@@ -59,9 +59,9 @@
       </div>
     <% end %>
     <div class="box-footer">
-      <h3 id="delete-acct">Delete account</h3>
+      <h3 id="delete-acct">Delete Account</h3>
       <p>Warning: Deleting your account is perminant and all of your saved settings, info, data etc. will be lost!</p>
-       <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: 'btn btn-danger', method: :delete %>
+       <%= link_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: 'btn btn-danger', method: :delete %>
     </div>
   </div>
 </div>

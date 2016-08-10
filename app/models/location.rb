@@ -7,6 +7,7 @@ class Location < ActiveRecord::Base
   validates :city, presence: true
   validates :state, presence: true
   validates :main_phone, :presence => true, phone: true
-  validates :website
+  validates :website, :url => { :allow_blank => true }
   validates :position, presence: true
+
 end

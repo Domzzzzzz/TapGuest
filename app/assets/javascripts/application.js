@@ -15,8 +15,8 @@
 //= require jquery_ujs
 //= require bootstrap.min
 //= require admin-lte
-//= require turbolinks
 //= require_tree .
+//-----------------------------------------------------------------------
 
 //function - toggle the sidebar when hamburger button is clicked
 $(function(){
@@ -48,3 +48,8 @@ $(function(){
     $('#changePW').addClass('hidden');
   });
 });
+
+// Turbolinks loads pages asynchronously which interferes with jquery
+// Requiring Turbolinks at the bottom of this page ensures
+// jquery is loaded before Turbolinks is loaded 
+//= require turbolinks

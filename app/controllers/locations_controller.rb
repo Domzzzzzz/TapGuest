@@ -1,6 +1,8 @@
 class LocationsController < ApplicationController
   before_filter :disable_nav, only: [:new]
+  before_action :authenticate_admin!
   before_action :set_location, only: [:edit, :update]
+
 
   def new
     @location = Location.new
@@ -12,9 +14,12 @@ class LocationsController < ApplicationController
   # later successful create redirect will be changed to go to new plan page
   # erase these comments after changing redirect path
   def create
+    @admin = current_admin
     @location = Location.new(location_params)
 
     if @location.save
+      @admin.location_id = @location.id
+      @admin.save 
       flash[:success] = "Restaurant info successfully saved"
       redirect_to root_path
     else
