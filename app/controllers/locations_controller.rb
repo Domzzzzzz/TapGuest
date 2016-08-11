@@ -3,7 +3,6 @@ class LocationsController < ApplicationController
   before_action :authenticate_admin!
   before_action :set_location, only: [:edit, :update]
 
-
   def new
     @location = Location.new
   end
@@ -19,7 +18,7 @@ class LocationsController < ApplicationController
 
     if @location.save
       @admin.location_id = @location.id
-      @admin.save 
+      @admin.save
       flash[:success] = "Restaurant info successfully saved"
       redirect_to root_path
     else
