@@ -32,6 +32,18 @@
           <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
         </div>
 
+        <div class="row text-center">
+          <div class="form-group col-xs-6">
+            <%= f.label :manager %>
+            <%= f.select :manager, [ ['Yes', true], ['No', false] ] %>
+          </div>
+
+          <div class="form-group col-xs-6">
+            <%= f.label :active %>
+            <%= f.select :active, [ ['Yes', true], ['No', false] ] %>
+          </div>
+        </div>
+
         <div id="changePW" class="form-group">
           <%= link_to 'Change Password', '#', id: 'show-fields' %>
         </div>
@@ -39,7 +51,7 @@
         <div id="hidden-fields" class="hidden">
           <div class="form-group">
             <%= f.label 'Change password' %> <br>
-            <%= f.password_field :password, placeholder: 'Choose Password', class: 'form-control', autocomplete: "off" %>
+            <%= f.password_field :password, placeholder: 'New Password', class: 'form-control', autocomplete: "off" %>
           </div>
 
           <div class="form-group">
@@ -51,18 +63,6 @@
         <div class="form-group">
           <%= f.label :current_password %> <i>(Enter current password to confirm changes)</i><br>
           <%= f.password_field :current_password, placeholder: 'Current Password', class: 'form-control', autocomplete: "off" %>
-        </div>
-
-        <div class="row text-center">
-          <div class="form-group col-xs-6">
-            <%= f.label :manager %>
-            <%= f.select :manager, [ ['Yes', true], ['No', false] ] %>
-          </div>
-
-          <div class="form-group col-xs-6">
-            <%= f.label :active %>
-            <%= f.select :active, [ ['Yes', true], ['No', false] ] %>
-          </div>
         </div>
 
       </div>

@@ -34,11 +34,10 @@
 
       <div class="box-footer">
         <%= f.submit "Log in", class: 'btn btn-primary bottom-btn' %> <br>
-        <%= link_to 'Sign up for a new account', new_admin_registration_path %>
+        <%= link_to 'I forgot my password', new_admin_password_path %> <br>
+        <%= link_to 'Sign up for a new account', new_admin_registration_path %> <br>
+        <%= link_to "Home", root_path %>
       </div>
     <% end %>
   </div>
-</div>
-<div class="text-center">
-  <%= link_to 'Back', root_path %>
 </div>

@@ -1,17 +1,17 @@
 <div class="alert
-    <%=
-    case type.to_sym
-      when :alert, :danger, :validation_errors
-          'alert-danger'        # red
-      when :warning
-          'alert-warning'       # yellow
-      when :notice, :success
-          'alert-success'       # green
-      else
-          'alert-info'          # blue
-    end
-    %> alert-dismissible" role="alert">
+  <%= case type.to_sym
+        when :alert, :danger, :validation_errors
+            'alert-danger'        # red
+        when :warning
+            'alert-warning'       # yellow
+        when :notice, :success
+            'alert-success'       # green
+        else
+            'alert-info'          # blue
+      end %>
+alert-dismissible" role="alert">
 
+      
     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
     <%= content %>
 

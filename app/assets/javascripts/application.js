@@ -51,5 +51,5 @@ $(function(){
 
 // Turbolinks loads pages asynchronously which interferes with jquery
 // Requiring Turbolinks at the bottom of this page ensures
-// jquery is loaded before Turbolinks is loaded 
+// jquery is loaded before Turbolinks is loaded
 //= require turbolinks
