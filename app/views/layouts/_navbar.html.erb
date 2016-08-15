@@ -1,4 +1,4 @@
-<% if admin_signed_in? %>
+<% if admin_signed_in? || user_signed_in? %>
   <div id="navigate" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <button id="hamburger" type="button" class="navbar-toggle" data-toggle="off-canvas" data-target="#sidebar">
@@ -18,11 +18,29 @@
   <nav id="sidebar">
     <ul id="sidebar-list" style="list-style:none;">
       <li id="name-panel">
-        <i class="fa fa-user fa-2x"></i> <font size="5"><%= current_admin.username %></font>
+        <% if admin_signed_in? %>
+          <i class="fa fa-user fa-2x"></i> <font size="5"><%= current_admin.username %></font>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <i class="fa fa-user fa-2x"></i> <font size="5"><%= current_user.username %></font>
+        <% end %>
       </li>
 
       <li class="sidebar-items">
-        <i class="fa fa-key"></i> Admin
+        <% if admin_signed_in? %>
+          <i class="fa fa-key"></i> Admin
+        <% end %>
+
+        <% if user_signed_in? %>
+          <% if current_user.role == 'manager' %>
+            <i class="fa fa-key"></i> Manager
+          <% elsif current_user.role == 'host' %>
+            <i class="fa fa-key"></i> Host
+          <% else %>
+            <i class="fa fa-key"></i> Hostess
+          <% end %>
+        <% end %>
       </li>
 
       <li class="sidebar-items">
@@ -30,7 +48,7 @@
       </li>
 
       <li class="sidebar-items">
-        <%= link_to  edit_admin_registration_path, class: 'sidebar-links'  do %>
+        <%= link_to edit_admin_registration_path, class: 'sidebar-links'  do %>
           <i class="fa fa-cog"></i> Account Settings
         <% end %>
       </li>

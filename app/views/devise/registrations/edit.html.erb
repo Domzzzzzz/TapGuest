@@ -32,18 +32,6 @@
           <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
         </div>
 
-        <div class="row text-center">
-          <div class="form-group col-xs-6">
-            <%= f.label :manager %>
-            <%= f.select :manager, [ ['Yes', true], ['No', false] ] %>
-          </div>
-
-          <div class="form-group col-xs-6">
-            <%= f.label :active %>
-            <%= f.select :active, [ ['Yes', true], ['No', false] ] %>
-          </div>
-        </div>
-
         <div id="changePW" class="form-group">
           <%= link_to 'Change Password', '#', id: 'show-fields' %>
         </div>

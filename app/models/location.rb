@@ -1,5 +1,6 @@
 class Location < ActiveRecord::Base
   has_one :admin
+  has_many :users 
 
   validates :restaurant_name, presence: true
   validates :address, presence: true

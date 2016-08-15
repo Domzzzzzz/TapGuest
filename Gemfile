@@ -16,6 +16,7 @@ gem 'twilio-ruby'
 gem 'figaro'
 gem 'phonelib'
 gem 'validate_url'
+gem 'cancancan', '~> 1.13', '>= 1.13.1'
 
 group :development, :test do
   gem 'byebug'

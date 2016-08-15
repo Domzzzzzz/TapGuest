@@ -15,7 +15,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   # defining what admin params can be updated
   def account_update_params
-    params.require(:admin).permit(:firstname, :lastname, :password, :password_confirmation, :current_password, :manager, :active)
+    params.require(:admin).permit(:firstname, :lastname, :password, :password_confirmation, :current_password)
   end
 
 end

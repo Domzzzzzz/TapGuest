@@ -12,17 +12,29 @@ class ApplicationController < ActionController::Base
     @disable_nav = true
   end
 
-  # Check if admin is logged in 
-  def logged_in?
-    current_admin != nil
+  # Prevents user with a host/hostess role from accessing certain pages.
+  def access_denied
+    if user_signed_in?
+      if current_user.role == 'host' || current_user.role == 'hostess'
+        redirect_to root_path
+        flash[:warning] = "You must be an admin or manager to access"
+      end
+    end
   end
 
   protected
 
-  # Ensure the @location variable is loaded in all views
-  def get_location
-    if logged_in?
+  # Ensure the @location variable is loaded in all views for admin
+  def admin_get_location
+    if admin_signed_in?
       @location = current_admin.location
+    end
+  end
+
+  # Ensure the @location variable is loaded in all views for users
+  def user_get_location
+    if user_signed_in?
+      @location = current_user.location
     end
   end
 
