@@ -43,7 +43,7 @@
   margin: 0 auto;
 }
 
-#delete-acct {
+.delete-acct {
   margin-top: 0px;
 }
 
@@ -80,7 +80,7 @@
 
 /* Landing page styles */
 #welcome {
-  margin-top: 200px;
+  margin-top: 50px;
   color: #1a4180;
 }
 
@@ -90,6 +90,7 @@
 
 #home-links {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #home-caption {
@@ -97,6 +98,7 @@
   width: 100%;
   max-width: 650px;
   margin: 0 auto;
+  text-align: justify;
 }
 
 /* Navbar Styles */

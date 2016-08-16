@@ -5,7 +5,7 @@
 <div class="form-wrapper">
   <div class="box box-primary">
     <div class="box-header with-border">
-      <h3 class="text-center">Admin Log In</h3> <hr>
+      <h3 class="text-center">User Log In</h3> <hr>
     </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), role: 'form') do |f| %>
@@ -34,10 +34,10 @@
 
       <div class="box-footer">
         <%= f.submit "Log in", class: 'btn btn-primary bottom-btn' %> <br>
-        <%= link_to 'I forgot my password', new_admin_password_path %> <br>
-        <%= link_to 'Sign up for a new account', new_admin_registration_path %> <br>
+        <%= link_to 'I forgot my password', '#' do %>
+          <%= flash.now[:alert] = "Contact a manager to get a new password" %>
+        <% end %>
         <%= link_to "Home", root_path %>
       </div>
     <% end %>
   </div>
-</div>

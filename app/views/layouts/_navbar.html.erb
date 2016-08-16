@@ -44,12 +44,22 @@
       </li>
 
       <li class="sidebar-items">
-        <i class="fa fa-dashboard"></i> Dashboard
+        <%= link_to dashboard_path , class: 'sidebar-links' do %>
+          <i class="fa fa-dashboard"></i> Dashboard
+        <% end %>
       </li>
 
       <li class="sidebar-items">
-        <%= link_to edit_admin_registration_path, class: 'sidebar-links'  do %>
-          <i class="fa fa-cog"></i> Account Settings
+        <% if admin_signed_in? %>
+          <%= link_to edit_admin_registration_path, class: 'sidebar-links' do %>
+            <i class="fa fa-cog"></i> Account Settings
+          <% end %>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <%= link_to edit_user_registration_path, class: 'sidebar-links' do %>
+            <i class="fa fa-cog"></i> Account Settings
+          <% end %>
         <% end %>
       </li>
 
@@ -60,8 +70,16 @@
       </li>
 
       <li class="sidebar-items">
-        <%= link_to  destroy_admin_session_path, class: 'sidebar-links', method: :delete do %>
-          <i class="fa fa-sign-out"></i> Log Out
+        <% if admin_signed_in? %>
+          <%= link_to  destroy_admin_session_path, class: 'sidebar-links', method: :delete do %>
+            <i class="fa fa-sign-out"></i> Log Out
+          <% end %>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <%= link_to  destroy_user_session_path, class: 'sidebar-links', method: :delete do %>
+            <i class="fa fa-sign-out"></i> Log Out
+          <% end %>
         <% end %>
       </li>
     </ul>

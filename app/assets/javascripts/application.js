@@ -42,10 +42,10 @@ $(function(){
 
 // function - show password fields when 'Change Password' link is clicked
 $(function(){
-  $('#show-fields').click(function(e){
+  $('.show-fields').click(function(e){
     e.preventDefault();
-    $('#hidden-fields').removeClass('hidden');
-    $('#changePW').addClass('hidden');
+    $('.hidden-fields').removeClass('hidden');
+    $('.changePW').addClass('hidden');
   });
 });
 

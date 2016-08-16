@@ -17,22 +17,19 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       if current_user.role == 'host' || current_user.role == 'hostess'
         redirect_to root_path
-        flash[:warning] = "You must be an admin or manager to access"
+        flash[:warning] = "You must be an admin or a manager to access"
       end
     end
   end
 
   protected
 
-  # Ensure the @location variable is loaded in all views for admin
-  def admin_get_location
+  # Ensure the @location variable is loaded in all views 
+  def get_location
     if admin_signed_in?
       @location = current_admin.location
     end
-  end
 
-  # Ensure the @location variable is loaded in all views for users
-  def user_get_location
     if user_signed_in?
       @location = current_user.location
     end
