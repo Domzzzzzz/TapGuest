@@ -1,0 +1,107 @@
+<div class="center-block text-center">
+  <%= image_tag('TGlogo2') %>
+</div> <br>
+
+<!-- User table -->
+<div class="dashboard-tables center-block">
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="text-center"><i class="fa fa-users"></i> Users</h3>
+    </div>
+    <div class="box-body">
+      <table class="table table-bordered table-striped">
+        <tr>
+          <th>User</th>
+          <th>Role</th>
+          <th style="width: 40px">Active</th>
+        </tr>
+
+        <tr>
+          <td>
+            <%= link_to edit_admin_registration_path do %>
+              <%= @admin.username %>
+            <% end %>
+          </td>
+          <td>Admin</td>
+          <td><span class="label label-success">Yes</span></td>
+        </tr>
+
+        <% @users.each do |user| %>
+          <tr>
+            <td>
+              <%= link_to edit_user_registration_path(user) do %>
+                <%= user.username %>
+              <% end %>
+            </td>
+
+            <% if user.role == 'manager' %>
+              <td>Manager</td>
+            <% elsif user.role == 'host' %>
+              <td>Host</td>
+            <% else %>
+              <td>Hostess</td>
+            <% end %>
+
+            <% if user.active == true %>
+              <td><span class="label label-success">Yes</span></td>
+            <% else %>
+              <td><span class="label label-danger">No</span></td>
+            <% end %>
+          </tr>
+        <% end %>
+
+      </table>
+    </div>
+
+    <div class="box-footer clearfix">
+      <%= link_to 'Add a new User', new_user_registration_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+</div>
+
+<!-- Restaurant info table -->
+<div class="dashboard-tables center-block">
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="text-center"><i class="fa fa-cutlery"></i> Restaurant Info</h3>
+    </div>
+    <div class="box-body">
+      <table class="table table-bordered table-striped">
+        <tr>
+          <td class="text-center" style="width: 110px"><b><i class="fa fa-glass"></i> Restaurant</b></td>
+          <td><%= @location.restaurant_name %></td>
+        </tr>
+
+        <tr>
+          <td class="text-center" style="width: 110px"><i class="fa fa-map-marker"></i> <b>Address</b></td>
+          <td><%= @location.address %>. <%= @location.city %>, <%= @location.state %> <%= @location.postal_code %> </td>
+        </tr>
+
+        <tr>
+          <td class="text-center" style="width: 110px"><i class="fa fa-phone-square"></i> <b>Phone</b></td>
+          <td><%= number_to_phone(@location.main_phone, area_code: true) %></td>
+        </tr>
+
+        <tr>
+          <td class="text-center" style="width: 110px"><i class="fa fa-laptop"></i> <b>Website</b></td>
+          <td><%= link_to @location.website, @location.website, target: '_blank' %></td>
+        </tr>
+
+        <tr>
+          <td class="text-center" style="width: 110px"><i class="fa fa-black-tie"></i> <b>Position</b></td>
+          <% if admin_signed_in? %>
+            <td><%= @location.position %></td>
+          <% else %>
+            <td>Manager</td>
+          <% end %>
+        </tr>
+      </table>
+    </div>
+
+    <div class="box-footer clearfix">
+      <%= link_to 'Edit Restaurant Info', edit_location_path(@location), class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+</div>

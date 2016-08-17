@@ -162,3 +162,11 @@
 #sidebar-list {
   padding-left: 0;
 }
+
+/* Dashboard styles */
+.dashboard-tables {
+  width: 100%;
+  max-width: 750px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

@@ -32,6 +32,16 @@
           <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
         </div>
 
+        <div class="form-group">
+          <%= f.label :role %>
+          <%= f.select :role, [['Manager', 'manager'],['Host', 'host'],['Hostess', 'hostess']] %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :active %>
+          <%= f.select :active, [['Yes', true],['No', false]] %>
+        </div>
+
         <div class="changePW form-group">
           <%= link_to 'Change Password', '#', class: 'show-fields' %>
         </div>
@@ -61,7 +71,7 @@
     <% end %>
     <div class="box-footer">
       <h3 class="delete-acct">Delete Account</h3>
-      <p>Warning: Deleting your account is perminant and all of your saved settings, info, data etc. will be lost!</p>
+      <p>Warning: Deleting a user is perminant and all of your saved info will be lost!</p>
        <%= button_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: 'btn btn-danger', method: :delete %>
     </div>
   </div>

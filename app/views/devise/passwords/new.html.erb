@@ -22,7 +22,8 @@
 
       <div class="box-footer">
         <%= f.submit "Send Email", class: 'btn btn-primary bottom-btn' %> <br>
-        <%= link_to 'Log In', new_admin_session_path %> <br>
+        <%= link_to 'Admin Log In', new_admin_session_path %> <br>
+        <%= link_to 'User Log In', new_user_session_path %> <br>
         <%= link_to 'Sign up', new_admin_registration_path %>
       </div>
     <% end %>

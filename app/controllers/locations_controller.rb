@@ -28,12 +28,10 @@ class LocationsController < ApplicationController
     end
   end
 
-  # later successful redirect will be changed to go to dashboard page
-  # erase these comments after changing redirect path
   def update
     if @location.update(location_params)
       flash[:success] = "Restaurant info updated"
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       flash.now[:danger] = "Something went wrong and the restaurant info wasn't updated"
       render :edit

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :get_location
 
   # Adding more flash types for bootstrap styling (defaults- :alert, :notice)
-  add_flash_types :danger, :warning, :success, :validation_errors
+  add_flash_types :danger, :warning, :success, :info, :validation_errors
 
   # Exclude page from displaying navbar - use: before_filter :disable_nav
   def disable_nav
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  # Ensure the @location variable is loaded in all views 
+  # Ensure the @location variable is loaded in all views
   def get_location
     if admin_signed_in?
       @location = current_admin.location

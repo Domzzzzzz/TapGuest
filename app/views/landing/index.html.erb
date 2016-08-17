@@ -7,9 +7,22 @@
       TapGuest began as a simple idea - Make Restaurant Waiting Easy! We are a small, bootstrapped team of dedicated technology, sales and operations specialists with nearly 70 years of combined experience. Our mission is simple - to provide THE preferred iPad® waitlist solution for leading Restaurants in the US and Canada, and to grow and evolve our business as your business needs do. We know that we can only become the world's leading provider of Waitlist Solutions with your help, and we take that responsibility very, very seriously. If you want a true business partner who also happens to make best in class software with no shenanigans, then you have come to the right place. TapGuest combines cloud technology with the flexibility and power of the iPad®, SMS Text messaging and mobile phones. Simply put, TapGuest is Waiting Made Easy!™. What are you waiting for? Let your guests Wait Different™ now...sign up for TapGuest service today!
       </font>
     </p> <br>
-    <% unless admin_signed_in? %>
-      <%= link_to 'Admin Log In', new_admin_session_path, class: 'btn btn-primary' %>
-      <%= link_to 'User Log In', new_user_session_path, class: 'btn btn-primary' %>
+    <% unless admin_signed_in? || user_signed_in? %>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li>
+            <%= link_to 'Admin', new_admin_session_path, class: 'btn btn-primary' %>
+          </li>
+          <li>
+            <%= link_to 'Manager/Host/Hostess', new_user_session_path, class: 'btn btn-primary' %>
+          </li>
+        </ul>
+      </div>
       <%= link_to 'Sign Up', new_admin_registration_path, class: 'btn btn-primary' %>
     <% end %>
   </div>

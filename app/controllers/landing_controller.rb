@@ -5,6 +5,8 @@ class LandingController < ApplicationController
   end
 
   def dashboard
+    @admin = current_admin
+    @users = User.all 
   end
 
 end
