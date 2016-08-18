@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
   before_filter :disable_nav, only: [:new]
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, only: [:new]
   before_action :set_location, only: [:edit, :update]
   before_action :access_denied
 

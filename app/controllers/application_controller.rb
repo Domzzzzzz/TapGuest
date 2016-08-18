@@ -15,9 +15,9 @@ class ApplicationController < ActionController::Base
   # Prevents user with a host/hostess role from accessing certain pages.
   def access_denied
     if user_signed_in?
-      if current_user.role == 'host' || current_user.role == 'hostess'
-        redirect_to root_path
-        flash[:warning] = "You must be an admin or a manager to access"
+      if current_user.role == 'Host' || current_user.role == 'Hostess'
+        redirect_to :back
+        flash[:warning] = "You must be the admin or a manager to access"
       end
     end
   end

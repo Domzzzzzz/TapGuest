@@ -9,7 +9,7 @@
     </p> <br>
     <% unless admin_signed_in? || user_signed_in? %>
       <div class="btn-group">
-        <button type="button" class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-primary">Log In</button>
         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
           <span class="caret"></span>
           <span class="sr-only">Toggle Dropdown</span>
@@ -19,7 +19,7 @@
             <%= link_to 'Admin', new_admin_session_path, class: 'btn btn-primary' %>
           </li>
           <li>
-            <%= link_to 'Manager/Host/Hostess', new_user_session_path, class: 'btn btn-primary' %>
+            <%= link_to 'Manager/Host/Hostess', login_path, class: 'btn btn-primary' %>
           </li>
         </ul>
       </div>

@@ -28,6 +28,11 @@
         </div>
 
         <div class="form-group">
+          <%= f.label 'Username' %>
+          <%= f.text_field :username, placeholder: 'Username', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
           <%= f.label :email %><br>
           <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
         </div>
@@ -59,6 +64,7 @@
         <%= f.submit 'Update', class: 'btn btn-primary' %>
       </div>
     <% end %>
+
     <div class="box-footer">
       <h3 class="delete-acct">Delete Account</h3>
       <p>Warning: Deleting your account is perminant and all of your saved settings, info, data etc. will be lost!</p>

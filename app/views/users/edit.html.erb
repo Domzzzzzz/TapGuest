@@ -8,13 +8,7 @@
       <h3 class="text-center">Account Settings</h3> <hr>
     </div>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-
-    <% if resource.errors.any? %>
-      <div class="devise-errors" role="alert">
-        <%= devise_error_messages! %>
-      </div>
-    <% end %>
+    <%= form_for(@user) do |f| %>
 
       <div class="box-body">
         <div class="form-group">
@@ -28,18 +22,23 @@
         </div>
 
         <div class="form-group">
+          <%= f.label 'Username' %>
+          <%= f.text_field :username, placeholder: 'Username', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :role %> <br>
+          <%= f.select :role, [['Manager','Manager'], ['Host','Host'], ['Hostess','Hostess']] %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :active %> <br>
+          <%= f.select :active, [['Yes', true], ['No', false]] %>
+        </div>
+
+        <div class="form-group">
           <%= f.label :email %><br>
           <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :role %>
-          <%= f.select :role, [['Manager', 'manager'],['Host', 'host'],['Hostess', 'hostess']] %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :active %>
-          <%= f.select :active, [['Yes', true],['No', false]] %>
         </div>
 
         <div class="changePW form-group">
@@ -57,22 +56,17 @@
             <%= f.password_field :password_confirmation, placeholder: 'Confirm Password', class: 'form-control', autocomplete: "off" %>
           </div>
         </div>
-
-        <div class="form-group">
-          <%= f.label :current_password %> <i>(Enter current password to confirm changes)</i><br>
-          <%= f.password_field :current_password, placeholder: 'Current Password', class: 'form-control', autocomplete: "off" %>
-        </div>
-
       </div>
 
       <div class="box-footer">
         <%= f.submit 'Update', class: 'btn btn-primary' %>
       </div>
     <% end %>
+
     <div class="box-footer">
-      <h3 class="delete-acct">Delete Account</h3>
-      <p>Warning: Deleting a user is perminant and all of your saved info will be lost!</p>
-       <%= button_to "Delete Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class: 'btn btn-danger', method: :delete %>
+      <h3 class="delete-acct">Delete User</h3>
+      <p>Warning: Deleting a user is perminant and all saved info will be lost!</p>
+       <%= button_to "Delete User", delete_user_path(@user), data: { confirm: "Are you sure?" }, class: 'btn btn-danger', method: :delete %>
     </div>
   </div>
 </div>

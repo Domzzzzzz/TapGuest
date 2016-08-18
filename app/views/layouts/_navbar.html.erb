@@ -33,13 +33,7 @@
         <% end %>
 
         <% if user_signed_in? %>
-          <% if current_user.role == 'manager' %>
-            <i class="fa fa-key"></i> Manager
-          <% elsif current_user.role == 'host' %>
-            <i class="fa fa-key"></i> Host
-          <% else %>
-            <i class="fa fa-key"></i> Hostess
-          <% end %>
+          <i class="fa fa-key"></i> <%= current_user.role %>
         <% end %>
       </li>
 
@@ -54,10 +48,8 @@
           <%= link_to edit_admin_registration_path, class: 'sidebar-links' do %>
             <i class="fa fa-cog"></i> Account Settings
           <% end %>
-        <% end %>
-
-        <% if user_signed_in? %>
-          <%= link_to edit_user_registration_path, class: 'sidebar-links' do %>
+        <% else %>
+          <%= link_to edit_user_path(current_user), class: 'sidebar-links' do %>
             <i class="fa fa-cog"></i> Account Settings
           <% end %>
         <% end %>
@@ -77,7 +69,7 @@
         <% end %>
 
         <% if user_signed_in? %>
-          <%= link_to  destroy_user_session_path, class: 'sidebar-links', method: :delete do %>
+          <%= link_to  logout_path, class: 'sidebar-links', method: :delete do %>
             <i class="fa fa-sign-out"></i> Log Out
           <% end %>
         <% end %>

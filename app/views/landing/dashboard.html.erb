@@ -29,18 +29,12 @@
         <% @users.each do |user| %>
           <tr>
             <td>
-              <%= link_to edit_user_registration_path(user) do %>
+              <%= link_to edit_user_path(user) do %>
                 <%= user.username %>
               <% end %>
             </td>
 
-            <% if user.role == 'manager' %>
-              <td>Manager</td>
-            <% elsif user.role == 'host' %>
-              <td>Host</td>
-            <% else %>
-              <td>Hostess</td>
-            <% end %>
+            <td><%= user.role %></td>
 
             <% if user.active == true %>
               <td><span class="label label-success">Yes</span></td>
@@ -54,7 +48,7 @@
     </div>
 
     <div class="box-footer clearfix">
-      <%= link_to 'Add a new User', new_user_registration_path, class: 'btn btn-primary' %>
+      <%= link_to 'Add a new User', new_user_path, class: 'btn btn-primary' %>
     </div>
   </div>
 
@@ -86,15 +80,6 @@
         <tr>
           <td class="text-center" style="width: 110px"><i class="fa fa-laptop"></i> <b>Website</b></td>
           <td><%= link_to @location.website, @location.website, target: '_blank' %></td>
-        </tr>
-
-        <tr>
-          <td class="text-center" style="width: 110px"><i class="fa fa-black-tie"></i> <b>Position</b></td>
-          <% if admin_signed_in? %>
-            <td><%= @location.position %></td>
-          <% else %>
-            <td>Manager</td>
-          <% end %>
         </tr>
       </table>
     </div>
