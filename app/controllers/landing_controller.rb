@@ -4,7 +4,7 @@ class LandingController < ApplicationController
   end
 
   def dashboard
-    @admin = @location.admin
+    @admin = @location.admin 
     @users = User.all
   end
 

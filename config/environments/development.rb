@@ -32,6 +32,7 @@ Rails.application.configure do
 
   # SMTP credentials - Currently set up with testing credentials.
   # These credentials need to be changed when deployed to production
+  # Environment variables located at: config/application.yml
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
