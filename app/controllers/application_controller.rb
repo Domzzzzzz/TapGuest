@@ -17,8 +17,16 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       if current_user.role == 'Host' || current_user.role == 'Hostess'
         redirect_to :back
-        flash[:warning] = "You must be the admin or a manager to access"
+        flash[:warning] = "Admin & Manager access only"
       end
+    end
+  end
+
+  # Prevents Managers & Hosts/Hostesses from accessing subscription pages.
+  def admin_only
+    unless admin_signed_in?
+      redirect_to :back
+      flash[:warning] = "Admin access only"
     end
   end
 

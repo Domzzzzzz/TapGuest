@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815060540) do
+ActiveRecord::Schema.define(version: 20160827105252) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,16 +44,18 @@ ActiveRecord::Schema.define(version: 20160815060540) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "locations", force: :cascade do |t|
-    t.string   "restaurant_name", default: "", null: false
-    t.string   "address",         default: "", null: false
-    t.string   "postal_code",     default: "", null: false
-    t.string   "city",            default: "", null: false
-    t.string   "state",           default: "", null: false
-    t.string   "main_phone",      default: "", null: false
+    t.string   "restaurant_name", default: "",    null: false
+    t.string   "address",         default: "",    null: false
+    t.string   "postal_code",     default: "",    null: false
+    t.string   "city",            default: "",    null: false
+    t.string   "state",           default: "",    null: false
+    t.string   "main_phone",      default: "",    null: false
     t.string   "website",         default: ""
-    t.string   "position",        default: "", null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.string   "position",        default: "",    null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "subscribed",      default: false, null: false
+    t.string   "stripe_id",       default: ""
   end
 
   create_table "users", force: :cascade do |t|
