@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete 'user/:id', to: 'users#destroy', as: :delete_user
   resources :locations, except: [:index, :show]
   get 'dashaboard', to: 'landing#dashboard', as: :dashboard
+  get 'plans', to: 'subscriptions#plans', as: :plan
   root 'landing#index'
 
 end

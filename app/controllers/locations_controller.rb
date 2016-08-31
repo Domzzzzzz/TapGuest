@@ -11,8 +11,6 @@ class LocationsController < ApplicationController
   def edit
   end
 
-  # later successful create redirect will be changed to go to new plan page
-  # erase these comments after changing redirect path
   def create
     @admin = current_admin
     @location = Location.new(location_params)
@@ -21,7 +19,7 @@ class LocationsController < ApplicationController
       @admin.location_id = @location.id
       @admin.save
       flash[:success] = "Restaurant info successfully saved"
-      redirect_to root_path
+      redirect_to plan_path
     else
       flash.now[:danger] = "Something went wrong and the restaurant info wasn't saved"
       render :new
