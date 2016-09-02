@@ -1,0 +1,13 @@
+<%= form_tag(create_plan_path, { method: :post }) do %>
+  <input name="plan_id" type="hidden" value="platinum_plan"></input>
+  <script
+    src="https://checkout.stripe.com/checkout.js"
+    class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-amount="14900"
+    data-name="TapGuest"
+    data-descripton="2000 parties per month"
+    data-billing-address="true"
+    data-locale="auto">
+  </script>
+<% end %>

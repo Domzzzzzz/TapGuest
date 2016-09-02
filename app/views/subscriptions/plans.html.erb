@@ -2,7 +2,7 @@
   <%= image_tag('TGlogo1.png', class: 'img-responsive tg-logo') %> <br>
 
   <div id="plan-caption">
-    <h2>TapGuest Monthly Pricing</h2>
+    <h1>Monthly Pricing</h1>
 
     <p>
       Pricing shown is in US Dollars and applicable <u>per location</u> in the USA and Canada. All pricing is subject to change at any time, without notice.
@@ -10,7 +10,7 @@
   </div>
 
     <div id="plan-includes">
-      <h3 class="text-center">Each TapGuest Plan Includes:</h3>
+      <h2 class="text-center">Each TapGuest Plan Includes:</h2>
 
       <div class="row">
         <div class="col-xs-4">
@@ -39,109 +39,117 @@
       </div>
     </div> <br>
 
-    <div class="plan-group">
-      <div class="row">
-        <div class="plan-box">
-          <div class="col-xs-4">
-            <div class="box box-widget widget-user">
-              <i class="fa fa-gift fa-2x circle-icon"></i>
+    <div id="plan-prices">
+      <h1 style="color:#1a4180;">TapGuest Plans</h1> <br>
+      <div class="plan-group">
+        <div class="row">
+          <div class="plan-box">
+            <div class="col-xs-4">
+              <div class="box box-widget widget-user">
+                <i class="fa fa-gift fa-2x circle-icon"></i>
 
-              <h3>Free</h3>
+                <h3>Free</h3>
 
-              <div class="plan-box-footer">
-                <font size="3">
-                  <p>
-                    <b>Free Plan</b> <br>
-                    25 parties per month
-                  </p>
-                </font>
+                <div class="plan-box-footer">
+                  <font size="3">
+                    <p>
+                      <b>Limited Free Plan</b> <br>
+                      <b>25</b> parties per month
+                    </p>
+                  </font>
+                  <%= render 'free' %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="plan-box">
-          <div class="col-xs-4">
-            <div class="box box-widget widget-user">
-              <i class="fa fa-user fa-2x circle-icon"></i>
+          <div class="plan-box">
+            <div class="col-xs-4">
+              <div class="box box-widget widget-user">
+                <i class="fa fa-user fa-2x circle-icon"></i>
 
-              <h3>Silver</h3>
-              <div class="plan-box-footer">
-                <font size="3">
-                  <p>
-                    <b>$69</b> Per Month <br>
-                    500 Parties Per Month
-                  </p>
-                </font>
+                <h3>Silver</h3>
+                <div class="plan-box-footer">
+                  <font size="3">
+                    <p>
+                      <b>$69</b> Per Month <br>
+                      <b>500</b> Parties Per Month
+                    </p>
+                  </font>
+                  <%= render 'silver' %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="plan-box">
-          <div class="col-xs-4">
-            <div class="box box-widget widget-user">
-              <i class="fa fa-group fa-2x circle-icon"></i>
+          <div class="plan-box">
+            <div class="col-xs-4">
+              <div class="box box-widget widget-user">
+                <i class="fa fa-group fa-2x circle-icon"></i>
 
-              <h3>Gold</h3>
+                <h3>Gold</h3>
 
-              <div class="plan-box-footer">
-                <font size="3">
-                  <p>
-                    <b>$119</b> Per Month <br>
-                    1200 parties per month
-                  </p>
-                </font>
+                <div class="plan-box-footer">
+                  <font size="3">
+                    <p>
+                      <b>$119</b> Per Month <br>
+                      <b>1200</b> parties per month
+                    </p>
+                  </font>
+                  <%= render 'gold' %>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="plan-group">
-      <div class="row">
-        <div class="col-xs-2"></div>
+      <div class="plan-group">
+        <div class="row">
+          <div class="col-xs-2"></div>
 
-        <div class="plan-box">
-          <div class="col-xs-4">
-            <div class="box box-widget widget-user">
-              <i class="fa fa-trophy fa-2x circle-icon"></i>
+          <div class="plan-box">
+            <div class="col-xs-4">
+              <div class="box box-widget widget-user">
+                <i class="fa fa-trophy fa-2x circle-icon"></i>
 
-              <h3>Platinum</h3>
+                <h3>Platinum</h3>
 
-              <div class="plan-box-footer">
-                <font size="3">
-                  <p>
-                    <b>$149</b> Per Month <br>
-                    2000 parties per month
-                  </p>
-                </font>
+                <div class="plan-box-footer">
+                  <font size="3">
+                    <p>
+                      <b>$149</b> Per Month <br>
+                      <b>2000</b> parties per month
+                    </p>
+                  </font>
+                  <%= render 'platinum' %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="plan-box">
-          <div class="col-xs-4">
-            <div class="box box-widget widget-user">
-              <i class="fa fa-globe fa-2x circle-icon"></i>
+          <div class="plan-box">
+            <div class="col-xs-4">
+              <div class="box box-widget widget-user">
+                <i class="fa fa-globe fa-2x circle-icon"></i>
 
-              <h3>Unlimited</h3>
+                <h3>Unlimited</h3>
 
-              <div class="plan-box-footer">
-                <font size="3">
-                  <p>
-                    <b>$199</b> Per Month <br>
-                    Unlimited parties per month
-                  </p>
-                </font>
+                <div class="plan-box-footer">
+                  <font size="3">
+                    <p>
+                      <b>$199</b> Per Month <br>
+                      Unlimited parties per month
+                    </p>
+                  </font>
+                  <%= render 'unlimited' %>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-xs-2"></div>
+          <div class="col-xs-2"></div>
+        </div>
       </div>
     </div>
   </div>

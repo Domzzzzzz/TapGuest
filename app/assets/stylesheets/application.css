@@ -182,12 +182,16 @@
 #plan-includes {
   color: #1a4180;
   width: 100%;
-  max-width: 650px;
+  max-width: 750px;
   margin: 0 auto;
   text-align: left;
 }
 
-.box {
+#plan-prices {
+  margin-bottom: 30px;
+}
+
+.widget-user {
   background-color: #1a4180;
   color: white;
   max-height: 300px;
@@ -195,7 +199,7 @@
 }
 
 .circle-icon {
-  background-color: #ecf0f5;
+  background-color: white;
   color: #1a4180;
   padding:30px;
   border-radius: 50%;

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :locations, except: [:index, :show]
   get 'dashaboard', to: 'landing#dashboard', as: :dashboard
   get 'plans', to: 'subscriptions#plans', as: :plan
+  post 'plans', to: 'subscriptions#create', as: :create_plan
   root 'landing#index'
 
 end
