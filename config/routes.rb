@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post 'user', to: 'users#create', as: :create_user
   delete 'user/:id', to: 'users#destroy', as: :delete_user
   resources :locations, except: [:index, :show]
+  get 'terms', to: 'landing#terms', as: :terms
   get 'dashaboard', to: 'landing#dashboard', as: :dashboard
   get 'plans', to: 'subscriptions#plans', as: :plan
   post 'plans', to: 'subscriptions#create', as: :create_plan

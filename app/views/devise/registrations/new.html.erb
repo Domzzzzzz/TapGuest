@@ -40,6 +40,17 @@
         <div class="form-group">
           <%= f.password_field :password_confirmation, placeholder: 'Confirm Password', class: 'form-control', autocomplete: "off" %>
         </div>
+
+        <div class="form-group">
+          <p>
+            You must agree to the <%= link_to 'terms & conditions', terms_path, id: 'terms-link' %>
+          </p>
+        </div>
+
+        <div class="form-group">
+          <%= f.check_box :read_terms %>
+          <%= f.label 'I agree to the Terms & Conditions' %>
+        </div>
       </div>
 
       <div class="box-footer">

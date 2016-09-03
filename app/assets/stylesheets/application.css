@@ -14,6 +14,7 @@
  *= require font-awesome
  *= require ionicons
  *= require admin-lte
+ *= require iCheck/all
  *= require datatables/dataTables.bootstrap
  *= require_tree .
  *= require_self
@@ -28,6 +29,19 @@
 
 .content-wrapper {
   margin-top: 80px;
+}
+
+#back-link {
+  margin-bottom:20px;
+}
+
+#terms {
+  color: #1a4180;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
 /* Form styles for signup, log in, & acct settings */
