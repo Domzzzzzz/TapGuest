@@ -19,6 +19,7 @@ gem 'validate_url'
 gem 'cancancan', '~> 1.13', '>= 1.13.1'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+
 group :development, :test do
   gem 'byebug'
 end

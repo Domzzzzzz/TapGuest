@@ -42,14 +42,13 @@
         </div>
 
         <div class="form-group">
-          <p>
-            You must agree to the <%= link_to 'terms & conditions', terms_path, id: 'terms-link' %>
-          </p>
+          Please read the
+          <%= link_to 'Terms & Conditions', '#', id: 'terms-link', data: { toggle: 'modal', target: '#myModal', backdrop: 'static', keyboard: false } %>
         </div>
 
-        <div class="form-group">
-          <%= f.check_box :read_terms %>
-          <%= f.label 'I agree to the Terms & Conditions' %>
+        <div id="terms-checkbox" class="form-group hidden">
+          <%= f.check_box :read_terms, class: 'form-checkboxes', data: { toggle: 'toggle', size: 'mini', on: 'Yes', off: 'No' } %>
+          <%= f.label :read_terms, 'I agree to the Terms & Conditions', class: 'checkbox-labels' %>
         </div>
       </div>
 
@@ -59,5 +58,20 @@
         <%= link_to "Home", root_path %>
       </div>
     <% end %>
+  </div>
+</div>
+
+<!-- Modal ---------------------------------------------------------------->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title text-center">Terms & Conditions</h2>
+      </div>
+      <div class="modal-body">
+        <%= render 'landing/terms' %>
+      </div>
+    </div>
   </div>
 </div>

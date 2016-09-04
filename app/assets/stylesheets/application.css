@@ -19,8 +19,7 @@
  *= require_tree .
  *= require_self
  */
-
-
+/*****************************************************************************/
  html, body {
   margin: 0px;
   padding: 0px;
@@ -36,12 +35,12 @@
 }
 
 #terms {
-  color: #1a4180;
   width: 100%;
-  max-width: 800px;
+  max-width: 530px;
   margin: 0 auto;
-  margin-bottom: 20px;
   text-align: justify;
+  max-height: 400px;
+  overflow: scroll;
 }
 
 /* Form styles for signup, log in, & acct settings */
@@ -71,6 +70,12 @@
 
 .bottom-btn {
   margin-bottom: 8px;
+}
+
+.checkbox-labels {
+  margin-left: 30px;
+  position: relative;
+  top: 4px;
 }
 
 /* Custom color & styles for devise error msgs */

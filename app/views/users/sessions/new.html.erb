@@ -26,8 +26,8 @@
         </div>
 
         <div class="form-group">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+          <%= f.check_box :remember_me, class: 'form-checkboxes', data: { toggle: 'toggle', size: 'mini', on: 'Yes', off: 'No' } %> 
+          <%= f.label :remember_me, class: 'checkbox-labels' %>
         </div>
 
       </div>

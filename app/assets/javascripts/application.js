@@ -17,6 +17,10 @@
 //= require admin-lte
 //= require_tree .
 //-----------------------------------------------------------------------
+// function - show checkbox when '#terms-link' is clicked
+var showCheckbox = function(){
+  $('#terms-checkbox').removeClass('hidden');
+};
 
 //function - toggle the sidebar when hamburger button is clicked
 $(function(){

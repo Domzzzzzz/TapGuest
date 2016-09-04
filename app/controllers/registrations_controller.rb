@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   before_action :access_denied
-  
+
   # overriding the devise after sign up path method
   def after_sign_up_path_for(resource)
    new_location_path
