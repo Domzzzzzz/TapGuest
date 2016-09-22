@@ -8,7 +8,7 @@ class Admin < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :firstname, :lastname, :username, presence: true
-  validates :terms, acceptance: { accept: true }  
+  validates :terms, acceptance: true 
 
   protected
 

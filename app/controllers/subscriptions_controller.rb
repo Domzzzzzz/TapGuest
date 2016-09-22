@@ -28,6 +28,12 @@ class SubscriptionsController < ApplicationController
           :plan => plan,
           :email => params[:stripeEmail]
         )
+      elsif plan_id == 'free_plan'
+        customer = Stripe::Customer.create(
+          :plan => plan,
+          :email => current_admin.email,
+          :metadata => { 'parties' => @parties }
+        )
       else
         customer = Stripe::Customer.create(
           :source => token,
@@ -40,6 +46,7 @@ class SubscriptionsController < ApplicationController
       @location.subscribed = true
       @location.stripe_id = customer.id
       @location.plan_id = plan_id
+      @location.parties = @parties
       @location.save
 
       flash[:success] = "Thank you for subscribing!"

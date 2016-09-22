@@ -1,5 +1,10 @@
 <%= form_tag(create_plan_path, { method: :post }) do %>
   <input name="plan_id" type="hidden" value="gold_plan"></input>
+  <div id="error_explanation">
+   <% if flash[:error].present? %>
+     <p><%= flash[:error] %></p>
+   <% end %>
+ </div>
   <script
     src="https://checkout.stripe.com/checkout.js"
     class="stripe-button"
@@ -7,7 +12,7 @@
     data-amount="11900"
     data-name="TapGuest"
     data-label="Subscribe"
-    data-descripton="1200 parties per month"
+    data-description="Gold Plan"
     data-billing-address="true"
     data-locale="auto">
   </script>

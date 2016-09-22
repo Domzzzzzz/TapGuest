@@ -153,3 +153,43 @@
       </div>
     </div>
   </div>
+
+<!-- Free Plan modal ------------------------------------------>
+  <div id="free-plan-modal" class="modal fade" role="dialog">
+    <div id="dialog-modal" class="modal-dialog">
+      <!-- Modal content-->
+      <div id="content-modal" class="modal-content">
+        <div id="header-modal" class="modal-header">
+          <a id="close-btn" class="close" data-dismiss="modal"></a>
+          <h4 id="modal-title" class="text-center"><b>TapGuest</b></h4>
+          <p class="text-center" id="modal-txt1">
+            Free Plan
+          </p>
+        </div>
+        <div id="body-modal" class="modal-body">
+          <div style="max-width:240px; width:100%;" class="text-center">
+            <p id="modal-txt2">
+              You are subscribing to the TapGuest Free Plan. This is a trial version and just a sample of what you get with TapGuest. You will receive 25 parties per month, free of cost. Give TapGuest a try and if you like the functionalities this app has to offer and require a larger amount of parties, be sure to upgrade your subscription and receive more parties available for you to use each month. Thank you for downloading TapGuest and we hope you enjoy!
+            </p>
+          </div>
+
+          <%= form_tag create_plan_path, method: 'post', id: 'plan-form' do %>
+            <!-- Setting the stripe publishable key for this form -->
+            <!-- When deploying, change this to TapGuest publishable key -->
+            <script>
+              Stripe.setPublishableKey('pk_test_6Bc4ZwbEjKLXryKMDMHrF6ib');
+            </script>
+
+            <input name="plan_id" type="hidden" value="free_plan"></input>
+
+            <div class="text-center">
+              <script src="https://checkout.stripe.com/checkout.js"></script>
+              <button type="submit" id="customButton2" class="stripe-button-el">
+                <span style="display: block;">Subscribe</span>
+              </button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

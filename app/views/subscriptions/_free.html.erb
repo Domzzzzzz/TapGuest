@@ -1,14 +1,4 @@
-<%= form_tag(create_plan_path, { method: :post }) do %>
-  <input name="plan_id" type="hidden" value="free_plan"></input>
-  <script
-    src="https://checkout.stripe.com/checkout.js"
-    class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-amount="0"
-    data-name="TapGuest"
-    data-label="Subscribe"
-    data-descripton="25 parties per month"
-    data-billing-address="true"
-    data-locale="auto">
-  </script>
-<% end %>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<button id="customButton" class="stripe-button-el" data-toggle="modal" data-target="#free-plan-modal" data-backdrop="static" data-keyboard="false">
+    <span style="display: block; min-height: 30px;">Subscribe</span>
+</button>

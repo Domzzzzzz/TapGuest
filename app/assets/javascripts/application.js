@@ -17,9 +17,14 @@
 //= require admin-lte
 //= require_tree .
 //-----------------------------------------------------------------------
-// function - show checkbox when '#terms-link' is clicked
+// function - show slider button when 'Agree to terms' button is clicked
 var showCheckbox = function(){
   $('#terms-checkbox').removeClass('hidden');
+};
+
+// function - send stripe params to subscriptions controller for free plan
+var freePlan = function(){
+
 };
 
 //function - toggle the sidebar when hamburger button is clicked

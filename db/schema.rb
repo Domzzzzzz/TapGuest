@@ -11,21 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160904225553) do
+ActiveRecord::Schema.define(version: 20160906103249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "firstname",              default: "",    null: false
-    t.string   "lastname",               default: "",    null: false
-    t.string   "username",               default: "",    null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "firstname",              default: "", null: false
+    t.string   "lastname",               default: "", null: false
+    t.string   "username",               default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -33,10 +33,9 @@ ActiveRecord::Schema.define(version: 20160904225553) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.integer  "location_id"
-    t.boolean  "terms",                  default: false, null: false
   end
 
   add_index "admins", ["confirmation_token"], name: "index_admins_on_confirmation_token", unique: true, using: :btree
@@ -58,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160904225553) do
     t.boolean  "subscribed",      default: false, null: false
     t.string   "stripe_id",       default: ""
     t.string   "plan_id"
+    t.integer  "parties"
   end
 
   create_table "users", force: :cascade do |t|
