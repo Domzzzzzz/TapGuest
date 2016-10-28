@@ -12,12 +12,17 @@ class ApplicationController < ActionController::Base
     @disable_nav = true
   end
 
+  # overriding the devise after sign in path method for users
+  def after_sign_in_path_for(users)
+    dashboard_path
+  end
+
   # Prevents user with a host/hostess role from accessing certain pages.
   def access_denied
     if user_signed_in?
       if current_user.role == 'Host' || current_user.role == 'Hostess'
         redirect_to :back
-        flash[:warning] = "Admin & Manager access only"
+        flash[:warning] = "Access Denied! Only Admin & Manager can access."
       end
     end
   end
@@ -26,7 +31,7 @@ class ApplicationController < ActionController::Base
   def admin_only
     unless admin_signed_in?
       redirect_to :back
-      flash[:warning] = "Admin access only"
+      flash[:warning] = "Access Denied! Only Admin can access."
     end
   end
 

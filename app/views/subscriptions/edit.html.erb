@@ -1,0 +1,65 @@
+<div class="center-block text-center">
+  <%= image_tag('TGlogo2') %> <br>
+  <h1 style="color: #1a4180;">Update Your Subscription</h1>
+</div>
+
+<div class="dashboard-tables center-block">
+  <div class="box">
+    <div class="box-header with-border">
+      <h3 class="text-center"><i class="fa fa-clipboard"></i> Current Subscription</h3>
+    </div>
+    <div class="box-body">
+      <table class="table table-bordered table-striped">
+        <tr>
+          <td class="text-center" style="width: 150px"><b><i class="fa fa-edit"></i> Subscriber</b></td>
+          <td><%= current_admin.firstname %> <%= current_admin.lastname %></td>
+        </tr>
+
+        <tr>
+          <td class="text-center" style="width: 150px"><i class="fa fa-shopping-cart"></i> <b>Current Plan</b></td>
+
+          <% case @location.plan_id %>
+            <% when "free_plan" %>
+              <td>Free Plan - 25 parties per month</td>
+            <% when "silver_plan" %>
+              <td>Silver Plan - 500 parties per month</td>
+            <% when "gold_plan" %>
+              <td>Gold Plan - 1200 parties per month</td>
+            <% when "platinum_plan" %>
+              <td>Platinum Plan - 2000 parties per month</td>
+            <% when "unlimited_plan" %>
+              <td>Unlimited Plan - Unlimited amount of parties per month</td>
+          <% end %>
+        </tr>
+
+        <tr>
+          <td class="text-center" style="width: 150px"><i class="fa fa-money"></i> <b>Monthly Payment</b></td>
+
+          <% case @location.plan_id %>
+            <% when "free_plan" %>
+              <td>$0.00 per month</td>
+            <% when "silver_plan" %>
+              <td>$69.00 per month</td>
+            <% when "gold_plan" %>
+              <td>$119.00 per month</td>
+            <% when "platinum_plan" %>
+              <td>$149.00 per month</td>
+            <% when "unlimited_plan" %>
+              <td>$199.00 per month</td>
+          <% end %>
+        </tr>
+
+        <tr>
+          <td class="text-center" style="width: 150px"><i class="fa fa-mobile"></i> <b>Parties</b></td>
+          <td>Available Parties: <%= @location.parties %></td>
+        </tr>
+
+        <tr>
+          <td class="text-center" style="width: 150px"><i class="fa fa-calendar"> <b>Subscription Period</b></i></td>
+          <td><%= Time.at(@subscription_start).strftime("%D") %> - <%= Time.at(@subscription_end).strftime("%D") %></td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>

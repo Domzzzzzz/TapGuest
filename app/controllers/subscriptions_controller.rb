@@ -1,9 +1,14 @@
 class SubscriptionsController < ApplicationController
   before_action :disable_nav, only: [:plans]
-  before_action :authenticate_admin!
   before_action :admin_only
 
     def plans
+    end
+
+    def edit
+      subscription = Stripe::Subscription.retrieve(@location.subscription_id)
+      @subscription_start = subscription.current_period_start
+      @subscription_end = subscription.current_period_end
     end
 
     def create
@@ -43,9 +48,15 @@ class SubscriptionsController < ApplicationController
         )
       end
 
+      subscription = Stripe::Subscription.create(
+        :customer => customer,
+        :plan => plan
+        )
+
       @location.subscribed = true
       @location.stripe_id = customer.id
       @location.plan_id = plan_id
+      @location.subscription_id = subscription.id
       @location.parties = @parties
       @location.save
 

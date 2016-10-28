@@ -63,10 +63,12 @@
       </div>
     <% end %>
 
-    <div class="box-footer">
-      <h3 class="delete-acct">Delete User</h3>
-      <p>Warning: Deleting a user is perminant and all saved info will be lost!</p>
-       <%= button_to "Delete User", delete_user_path(@user), data: { confirm: "Are you sure?" }, class: 'btn btn-danger', method: :delete %>
-    </div>
+    <% if admin_signed_in? %>
+      <div class="box-footer">
+        <h3 class="delete-acct">Delete User</h3>
+        <p>Warning: Deleting an account is perminant and all saved info will be lost!</p>
+         <%= button_to "Delete User", delete_user_path(@user), data: { confirm: "Are you sure?" }, class: 'btn btn-danger', method: :delete %>
+      </div>
+    <% end %>
   </div>
 </div>

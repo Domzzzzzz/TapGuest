@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-          <%= f.check_box :remember_me, class: 'form-checkboxes', data: { toggle: 'toggle', size: 'mini', on: 'Yes', off: 'No' } %> 
+          <%= f.check_box :remember_me, class: 'form-checkboxes', data: { toggle: 'toggle', size: 'mini', on: 'Yes', off: 'No' } %>
           <%= f.label :remember_me, class: 'checkbox-labels' %>
         </div>
 
@@ -34,9 +34,29 @@
 
       <div class="box-footer">
         <%= f.submit "Log in", class: 'btn btn-primary bottom-btn' %> <br>
-        <%= link_to 'I forgot my password', '#', data: { confirm: "Contact the admin or a manager to get a new password" } %> <br>
-        <%= link_to 'Sign up for a new account', new_admin_registration_path %> <br>
+        <%= link_to 'I forgot my password', '#', data: { toggle: 'modal', target: '#forgot-pw', backdrop: 'static', keyboard: false } %> <br>
+        <%= link_to 'Admin Log in', new_admin_session_path %> <br>
         <%= link_to "Home", root_path %>
       </div>
     <% end %>
+  </div>
+
+  <!-- Modal ---------------------------------------------------------------->
+  <div id="forgot-pw" class="modal fade" role="dialog">
+    <div id="password-modal" class="modal-dialog modal-sm">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-center">Request a New Password</h4>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <p id="modal-txt3">
+              Did you forget your password? Please contact your manager or the admin to request a new password.
+            </p> <br>
+            <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>

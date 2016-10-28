@@ -17,7 +17,7 @@
 
   <nav id="sidebar">
     <ul id="sidebar-list" style="list-style:none;">
-      <li id="name-panel">
+      <li class="name-panel">
         <% if admin_signed_in? %>
           <i class="fa fa-user fa-2x"></i> <font size="5"><%= current_admin.username %></font>
         <% end %>
@@ -27,13 +27,13 @@
         <% end %>
       </li>
 
-      <li class="sidebar-items">
+      <li class="name-panel">
         <% if admin_signed_in? %>
-          <i class="fa fa-key"></i> Admin
+          <i class="fa fa-key fa-2x"></i> <font size="5">Admin</font>
         <% end %>
 
         <% if user_signed_in? %>
-          <i class="fa fa-key"></i> <%= current_user.role %>
+          <i class="fa fa-key fa-2x"></i> <font size="5"><%= current_user.role %></font>
         <% end %>
       </li>
 
@@ -58,6 +58,12 @@
       <li class="sidebar-items">
         <%= link_to edit_location_path(@location), class: 'sidebar-links' do %>
           <i class="fa fa-cutlery"></i> Restaurant Info
+        <% end %>
+      </li>
+
+      <li class="sidebar-items">
+        <%= link_to edit_plan_path, class: 'sidebar-links' do %>
+          <i class="fa fa-clipboard"></i> Subscription
         <% end %>
       </li>
 

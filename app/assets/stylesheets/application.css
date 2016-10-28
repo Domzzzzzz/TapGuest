@@ -51,10 +51,16 @@
   background-color: #FDFDFE;
 }
 
+#password-modal {
+  width: 320px;
+  height: 100%;
+  max-height: 270px;
+}
+
 #header-modal {
   position: relative;
   padding: 12px 36px;
-  background-color: #E8E9EB;
+  background-color: #f4f1f1;
 }
 
 #body-modal {
@@ -73,8 +79,6 @@
   transition: none;
 }
 
-
-
 #modal-txt1 {
   color: #5b5b65;
   text-align: center;
@@ -84,7 +88,11 @@
 #modal-txt2 {
   text-align: justify;
   margin-left: 20px;
-  margin-top: 15px;
+  margin-top: 5px;
+}
+
+#modal-txt3{
+  text-align: justify;
 }
 
 #customButton2 {
@@ -99,13 +107,13 @@
 /* Form styles for signup, log in, & acct settings */
 .form-wrapper {
   width: 100%;
-  max-width: 350px;
+  max-width: 375px;
   margin: 0 auto;
 }
 
 .edit-form {
   width: 100%;
-  max-width: 390px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -209,7 +217,7 @@
   padding-top: 50px;
 }
 
-#name-panel {
+.name-panel {
   position: relative;
   padding: 15px;
   height: 60px;
@@ -238,7 +246,14 @@
 /* Dashboard styles */
 .dashboard-tables {
   width: 100%;
-  max-width: 750px;
+  max-width: 705px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.dash-tables {
+  width: 100%;
+  max-width: 375px;
   margin-top: 20px;
   margin-bottom: 20px;
 }

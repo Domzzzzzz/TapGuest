@@ -1,9 +1,15 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_action :access_denied
+  before_action :admin_only, only: [:edit]
 
   # overriding the devise after sign up path method
+  # change this to route to the admin login page before deployment
   def after_sign_up_path_for(resource)
-   new_location_path
+    new_location_path
+  end
+
+  # overriding the devise after sign in path method
+  def after_sign_in_path_for(resource)
+    dashboard_path
   end
 
   private

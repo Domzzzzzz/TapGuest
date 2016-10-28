@@ -24,11 +24,11 @@
         </div>
 
         <div class="form-group">
-          <%= f.select :role, [['Manager','Manager'], ['Host','Host'], ['Hostess','Hostess']], prompt: 'Select Role' %>
+          <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
         </div>
 
         <div class="form-group">
-          <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
+          <%= f.select :role, [['Manager','Manager'], ['Host','Host'], ['Hostess','Hostess']], prompt: 'Select Role' %>
         </div>
 
         <div class="form-group">
@@ -41,7 +41,7 @@
       </div>
 
       <div class="box-footer">
-        <%= f.submit "Create User", class: 'btn btn-primary bottom-btn' %> 
+        <%= f.submit "Create User", class: 'btn btn-primary bottom-btn' %>
       </div>
     <% end %>
   </div>
